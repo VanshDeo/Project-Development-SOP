@@ -3,7 +3,7 @@
 import React from 'react'
 import { useState } from 'react';
 
-const page = () => {
+const Page = () => {
 
     const [accordionState, setAccordionState] = useState({
         intakeA: false,
@@ -38,7 +38,7 @@ const page = () => {
     <div>
       <section id="intake" className="content-section active p-10">
                         <h1 className="text-3xl font-bold text-gray-900 mb-8">Phase 1: Intake & Initial Planning</h1>
-                        <p className="text-lg text-gray-600 mb-8">This initial phase is foundational to project success. Here, the Project Manager and Tech Lead collaborate to thoroughly understand the client's needs, define the project's scope, break down the work, and create a realistic timeline and resource plan. The goal is to establish a clear and agreed-upon roadmap before any design or development begins.</p>
+                        <p className="text-lg text-gray-600 mb-8">This initial phase is foundational to project success. Here, the Project Manager and Tech Lead collaborate to thoroughly understand the client&apos;s needs, define the project&apos;s scope, break down the work, and create a realistic timeline and resource plan. The goal is to establish a clear and agreed-upon roadmap before any design or development begins.</p>
                         <div className="space-y-4">
                             <div className="card">
                                 <div className="accordion-header p-6 flex justify-between items-center" onClick={() => handleAccordionClick('intakeA')}>
@@ -73,4 +73,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

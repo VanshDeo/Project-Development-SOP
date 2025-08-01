@@ -317,7 +317,7 @@ const App = () => {
                 {activeSection === 'intake' && (
                     <section id="intake" className="content-section active">
                         <h1 className="text-3xl font-bold text-gray-900 mb-8">Phase 1: Intake & Initial Planning</h1>
-                        <p className="text-lg text-gray-600 mb-8">This initial phase is foundational to project success. Here, the Project Manager and Tech Lead collaborate to thoroughly understand the client's needs, define the project's scope, break down the work, and create a realistic timeline and resource plan. The goal is to establish a clear and agreed-upon roadmap before any design or development begins.</p>
+                        <p className="text-lg text-gray-600 mb-8">This initial phase is foundational to project success. Here, the Project Manager and Tech Lead collaborate to thoroughly understand the client&apos;s needs, define the project&apos;s scope, break down the work, and create a realistic timeline and resource plan. The goal is to establish a clear and agreed-upon roadmap before any design or development begins.</p>
                         <div className="space-y-4">
                             <div className="card">
                                 <div className="accordion-header p-6 flex justify-between items-center" onClick={() => handleAccordionClick('intakeA')}>
@@ -354,7 +354,7 @@ const App = () => {
                 {activeSection === 'design' && (
                     <section id="design" className="content-section active">
                         <h1 className="text-3xl font-bold text-gray-900 mb-8">Phase 2: Design</h1>
-                        <p className="text-lg text-gray-600 mb-8">In the Design phase, creative vision meets practical application. The Design Team uses Figma to craft wireframes, mockups, and interactive prototypes. This phase is highly collaborative, involving internal reviews for technical feasibility and client reviews for approval, ensuring the final design is beautiful, usable, and buildable before it's handed off to the development team.</p>
+                        <p className="text-lg text-gray-600 mb-8">In the Design phase, creative vision meets practical application. The Design Team uses Figma to craft wireframes, mockups, and interactive prototypes. This phase is highly collaborative, involving internal reviews for technical feasibility and client reviews for approval, ensuring the final design is beautiful, usable, and buildable before it&apos;s handed off to the development team.</p>
                         <div className="space-y-4">
                             <div className="card">
                                 <div className="accordion-header p-6 flex justify-between items-center" onClick={() => handleAccordionClick('designA')}>
@@ -399,7 +399,7 @@ const App = () => {
                                     <span className={`text-2xl font-light transform transition-transform duration-300 ${accordionState.developmentA ? 'rotate-180' : 'rotate-0'}`}>&darr;</span>
                                 </div>
                                 <div className="accordion-content px-6" style={{ maxHeight: accordionState.developmentA ? '500px' : '0' }}>
-                                    <p className="pb-6 text-gray-700">The Tech Lead defines the project's technical architecture, selects the development stack, and establishes coding standards. This foundational planning prevents technical debt and ensures the product is scalable and maintainable long-term.</p>
+                                    <p className="pb-6 text-gray-700">The Tech Lead defines the project&apos;s technical architecture, selects the development stack, and establishes coding standards. This foundational planning prevents technical debt and ensures the product is scalable and maintainable long-term.</p>
                                 </div>
                             </div>
                             <div className="card">
@@ -454,7 +454,7 @@ const App = () => {
                                     <span className={`text-2xl font-light transform transition-transform duration-300 ${accordionState.testingC ? 'rotate-180' : 'rotate-0'}`}>&darr;</span>
                                 </div>
                                 <div className="accordion-content px-6" style={{ maxHeight: accordionState.testingC ? '500px' : '0' }}>
-                                    <p className="pb-6 text-gray-700">In the final testing stage, the client or end-users validate that the system meets their business needs. The PM facilitates this process. Successful UAT leads to formal client sign-off, providing a clear "definition of done" and confirming the product is ready for deployment.</p>
+                                    <p className="pb-6 text-gray-700">In the final testing stage, the client or end-users validate that the system meets their business needs. The PM facilitates this process. Successful UAT leads to formal client sign-off, providing a clear &quot;definition of done&quot; and confirming the product is ready for deployment.</p>
                                 </div>
                             </div>
                         </div>
@@ -488,7 +488,7 @@ const App = () => {
                                     <span className={`text-2xl font-light transform transition-transform duration-300 ${accordionState.oversightB ? 'rotate-180' : 'rotate-0'}`}>&darr;</span>
                                 </div>
                                 <div className="accordion-content px-6" style={{ maxHeight: accordionState.oversightB ? '500px' : '0' }}>
-                                    <p className="pb-6 text-gray-700">Potential risks are identified early and documented in a risk register with mitigation strategies. A formal change management process is used to control any modifications to scope, time, or cost, ensuring that all changes are evaluated for their full impact before being approved. This prevents scope creep and protects the project's integrity.</p>
+                                    <p className="pb-6 text-gray-700">Potential risks are identified early and documented in a risk register with mitigation strategies. A formal change management process is used to control any modifications to scope, time, or cost, ensuring that all changes are evaluated for their full impact before being approved. This prevents scope creep and protects the project&apos;s integrity.</p>
                                 </div>
                             </div>
                         </div>
