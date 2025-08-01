@@ -64,7 +64,11 @@ const App = () => {
 
 
     // Function to handle navigation clicks
-    const handleNavClick = (sectionId) => {
+    interface HandleNavClickProps {
+        sectionId: string;
+    }
+
+    const handleNavClick = (sectionId: HandleNavClickProps['sectionId']): void => {
         window.location.hash = sectionId;
         setActiveSection(sectionId);
     };
