@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <div className="w-full bg-white shadow-lg">
-      <div>
+      <div className={`${openSans.className}`}>
         <ul className="flex gap-6 justify-center">
           {items.map((item, index) => (
             <li

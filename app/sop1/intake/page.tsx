@@ -22,17 +22,35 @@ const Page = () => {
         oversightB: false,
     });
 
-    const handleAccordionClick = (panel) => {
-        setAccordionState(prevState => {
-            const newState = { ...prevState
-            };
+    interface AccordionState {
+        intakeA: boolean;
+        intakeB: boolean;
+        intakeC: boolean;
+        designA: boolean;
+        designB: boolean;
+        designC: boolean;
+        developmentA: boolean;
+        developmentB: boolean;
+        developmentC: boolean;
+        testingA: boolean;
+        testingB: boolean;
+        testingC: boolean;
+        oversightA: boolean;
+        oversightB: boolean;
+    }
+
+    const handleAccordionClick = (panel: keyof AccordionState): void => {
+        setAccordionState((prevState: AccordionState) => {
+            const newState: AccordionState = { ...prevState };
             // Close all other accordions and open the clicked one
-            Object.keys(newState).forEach(key => {
+            (Object.keys(newState) as Array<keyof AccordionState>).forEach((key) => {
                 newState[key] = (key === panel) ? !prevState[key] : false;
             });
             return newState;
         });
     };
+
+
 
   return (
     <div>

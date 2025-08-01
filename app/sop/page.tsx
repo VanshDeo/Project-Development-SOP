@@ -36,8 +36,8 @@ const App = () => {
 
 
     // Refs for the chart canvas element and the chart instance
-    const chartRef = useRef(null);
-    const kpiChartInstance = useRef(null);
+    const chartRef = useRef<HTMLCanvasElement>(null);
+    const kpiChartInstance = useRef<Chart<"bar", number[], string> | null>(null);
 
 
     // useEffect hook to handle routing based on URL hash
@@ -75,12 +75,28 @@ const App = () => {
 
 
     // Function to handle accordion clicks, toggling the state for a specific panel
-    const handleAccordionClick = (panel) => {
-        setAccordionState(prevState => {
-            const newState = { ...prevState
-            };
+    interface AccordionState {
+        intakeA: boolean;
+        intakeB: boolean;
+        intakeC: boolean;
+        designA: boolean;
+        designB: boolean;
+        designC: boolean;
+        developmentA: boolean;
+        developmentB: boolean;
+        developmentC: boolean;
+        testingA: boolean;
+        testingB: boolean;
+        testingC: boolean;
+        oversightA: boolean;
+        oversightB: boolean;
+    }
+
+    const handleAccordionClick = (panel: keyof AccordionState): void => {
+        setAccordionState((prevState: AccordionState) => {
+            const newState: AccordionState = { ...prevState };
             // Close all other accordions and open the clicked one
-            Object.keys(newState).forEach(key => {
+            (Object.keys(newState) as Array<keyof AccordionState>).forEach((key) => {
                 newState[key] = (key === panel) ? !prevState[key] : false;
             });
             return newState;
@@ -91,8 +107,9 @@ const App = () => {
     // useEffect hook for the KPI chart, triggered when the 'oversight' section is active
     useEffect(() => {
         if (activeSection === 'oversight' && chartRef.current) {
-            const ctx = chartRef.current.getContext('2d');
-            kpiChartInstance.current = new Chart(ctx, {
+            const ctx = chartRef.current?.getContext('2d');
+            if (ctx) {
+                kpiChartInstance.current = new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: ['Schedule Performance (SPI)', 'Cost Performance (CPI)', 'Test Pass Rate', 'Resource Utilization'],
@@ -152,11 +169,12 @@ const App = () => {
         
         // FIX: The `useEffect` cleanup function now destroys the chart instance.
         // This prevents memory leaks and ensures a new chart is created properly
-        // each time the `activeSection` changes to 'oversight'.
         return () => {
             if (kpiChartInstance.current) {
                 kpiChartInstance.current.destroy();
+                kpiChartInstance.current = null;
             }
+        };
         };
     }, [activeSection]); // This effect runs only when the activeSection state changes
 
